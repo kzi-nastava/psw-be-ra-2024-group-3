@@ -19,6 +19,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Explorer.Payments.API.Internal.Shopping;
 
 
 namespace Explorer.Payments.Tests.Integration
@@ -116,7 +117,7 @@ namespace Explorer.Payments.Tests.Integration
 
         private static ShoppingController CreateController(IServiceScope scope)
         {
-            return new ShoppingController(scope.ServiceProvider.GetRequiredService<IShoppingService>(), scope.ServiceProvider.GetRequiredService<ITourService>(), scope.ServiceProvider.GetRequiredService<ITourSessionService>(), scope.ServiceProvider.GetRequiredService<ITourReviewService>());
+            return new ShoppingController(scope.ServiceProvider.GetRequiredService<IShoppingService>(), scope.ServiceProvider.GetRequiredService<ITourService>(), scope.ServiceProvider.GetRequiredService<ITourSessionService>(), scope.ServiceProvider.GetRequiredService<ITourReviewService>(),scope.ServiceProvider.GetRequiredService<ITourPurchaseTokenService>());
 
         }
     }
