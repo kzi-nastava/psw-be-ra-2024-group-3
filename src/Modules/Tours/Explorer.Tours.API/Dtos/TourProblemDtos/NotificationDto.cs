@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,5 +30,6 @@ public enum NotificationType
 {
     TourProblemComment,
     TourRefundComment
+    PublicRequest
     //Ko bude koristio notifikacije neka sebi doda tip koji mu treba
 }
