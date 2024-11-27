@@ -88,7 +88,7 @@ namespace Explorer.API.Controllers.Tourist
             var referenceId = _purchaseTokenService.FindByTourAndTourist(tourId, Int32.Parse(touristId)).Id;
             NotificationDto notificationDto = new NotificationDto("Tour " + tour.Value.Name + " succesfully refunded", NotificationType.TourRefundComment, referenceId, Int32.Parse(touristId), false);
             _notificationService.Create(notificationDto);
-            return Ok(tour);
+            return CreateResponse(tour);
         }
 
         [HttpGet("purchased")]
