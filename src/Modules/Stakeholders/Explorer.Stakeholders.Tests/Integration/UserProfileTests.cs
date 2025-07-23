@@ -56,19 +56,19 @@ namespace Explorer.Stakeholders.Tests.Integration
             // Arrange
             using var scope = Factory.Services.CreateScope();
             var controller = CreateController(scope);
-            var profile = new UserProfileDto { Id = -2, FirstName = "Marko", LastName = "Markovic", ImageURL = "marko.jpg", Biography= "Retired dreamer", Motto = "Live, laugh, love." };
+            var profile = new UserProfileDto { Id = -2, FirstName = "Marko", LastName = "Markovic", ImageURL = "marko.jpg", Biography = "Retired dreamer", Motto = "Live, laugh, love." };
 
             // Act
             var profileResponse = ((ObjectResult)controller.Update(profile).Result).Value as UserProfileDto;
 
             //Assert
-            profileResponse.ShouldNotBeNull(); 
-            profileResponse.Id.ShouldBe(-2); 
-            profileResponse.FirstName.ShouldBe("Marko"); 
-            profileResponse.LastName.ShouldBe("Markovic"); 
-            profileResponse.ImageURL.ShouldBe("marko.jpg"); 
-            profileResponse.Biography.ShouldBe("Retired dreamer"); 
-            profileResponse.Motto.ShouldBe("Live, laugh, love."); 
+            profileResponse.ShouldNotBeNull();
+            profileResponse.Id.ShouldBe(-2);
+            profileResponse.FirstName.ShouldBe("Marko");
+            profileResponse.LastName.ShouldBe("Markovic");
+            profileResponse.ImageURL.ShouldBe("marko.jpg");
+            profileResponse.Biography.ShouldBe("Retired dreamer");
+            profileResponse.Motto.ShouldBe("Live, laugh, love.");
         }
 
         [Fact]
@@ -88,7 +88,7 @@ namespace Explorer.Stakeholders.Tests.Integration
 
         private static UserProfileController CreateController(IServiceScope scope)
         {
-            return new UserProfileController(scope.ServiceProvider.GetRequiredService<IUserProfileService>());
+            return new UserProfileController(scope.ServiceProvider.GetRequiredService<IUserProfileService>(), scope.ServiceProvider.GetRequiredService<IAccountService>());
         }
     }
 }
