@@ -6,10 +6,11 @@ using Explorer.Stakeholders.Core.Domain;
 using Explorer.Stakeholders.Core.Domain.RepositoryInterfaces;
 using Explorer.Stakeholders.Core.Domain.Users;
 using FluentResults;
+using Explorer.Stakeholders.API.Internal;
 
 namespace Explorer.Stakeholders.Core.UseCases
 {
-    public class UserService : BaseService<UserDto, User>, IUserService
+    public class UserService : BaseService<UserDto, User>, IUserService, IUserInternalService
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;

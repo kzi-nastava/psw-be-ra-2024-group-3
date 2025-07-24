@@ -36,6 +36,7 @@ public static class StakeholdersStartup
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IAchievementService, AchievementService>();
         services.AddScoped<IAchievementInternalService, AchievementService>();
+        services.AddScoped<IUserInternalService, UserService>();
     }
 
     private static void SetupInfrastructure(IServiceCollection services)

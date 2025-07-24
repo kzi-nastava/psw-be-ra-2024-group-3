@@ -12,8 +12,8 @@ using AutoMapper;
 using Explorer.Blog.Core.Domain.RepositoryInterfaces;
 using System.Net;
 using Explorer.Stakeholders.Core.Domain.Users;
-using Explorer.Stakeholders.API.Public;
 using Explorer.Stakeholders.API.Dtos;
+using Explorer.Stakeholders.API.Internal;
 
 namespace Explorer.Blog.Core.UseCases
 {
@@ -23,8 +23,8 @@ namespace Explorer.Blog.Core.UseCases
         private readonly IMapper _mapper;
         private readonly ICommentService _commentService;
         private readonly IMailService _mailService;
-        private readonly IUserService _userService;
-        public BlogService(IBlogRepository repository, ICommentService commentService, IMailService mailService, IUserService userService, IMapper mapper) : base(repository, mapper)
+        private readonly IUserInternalService _userService;
+        public BlogService(IBlogRepository repository, ICommentService commentService, IMailService mailService, IUserInternalService userService, IMapper mapper) : base(repository, mapper)
         {
             _blogRepository = repository;
             _mapper = mapper;
