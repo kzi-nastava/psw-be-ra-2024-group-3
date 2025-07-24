@@ -33,3 +33,4 @@ VALUES (-22, 'turista2@gmail.com', 'turista2', 2, true,'{{"longitude": 0, "latit
 INSERT INTO stakeholders."Users"(
     "Id", "Username", "Password", "Role", "IsActive", "Location","XP")
 VALUES (-23, 'turista3@gmail.com', 'turista3', 2, true,'{{"longitude": 0, "latitude": 0}}',0);
+commit;

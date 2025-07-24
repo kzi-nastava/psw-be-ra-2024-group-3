@@ -167,7 +167,7 @@ namespace Explorer.Blog.Tests.Integration
         }
 
         [Theory]
-        [InlineData("Title1", 123, "2024-11-06T00:00:00", false)]
+        [InlineData("Title5", 123, "2024-11-06T00:00:00", false)]
         public void DeleteSingleVoteToExistingBlog_ThroughController(string blogTitle, int voteAuthorId, string voteCreationDate, bool voteValue)
         {
             // Arrange
