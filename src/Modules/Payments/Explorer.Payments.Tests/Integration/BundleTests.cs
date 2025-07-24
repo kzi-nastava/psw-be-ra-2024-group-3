@@ -63,7 +63,7 @@ namespace Explorer.Payments.Tests.Integration
         }
 
         [Theory]
-        [InlineData(-1, new[] { -1, -2 }, 199.99, BundleStatus.Published, "TitleUpdated")]
+        [InlineData(1, new[] { -1, -2 }, 199.99, BundleStatus.Published, "TitleUpdated")]
         public void UpdateBundle(int authorId, int[] tourIds, double price, BundleStatus newStatus, string title)
         {
             // Arrange
@@ -73,7 +73,7 @@ namespace Explorer.Payments.Tests.Integration
 
             var updatedBundle = new BundleDto
             {
-                Id = -1,
+                Id = 1,
                 AuthorId = authorId,
                 TourIds = tourIds.ToList(),
                 Price = price,

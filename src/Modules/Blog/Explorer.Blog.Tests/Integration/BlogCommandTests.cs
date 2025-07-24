@@ -101,7 +101,7 @@ namespace Explorer.Blog.Tests.Integration
         }
 
         [Theory]
-        [InlineData("Title1", 456, "2024-11-06T00:00:00", true)]
+        [InlineData("Title1", 3, "2024-11-06T00:00:00", true)]
         public void AddSingleVoteToExistingBlog_ThroughController(string blogTitle, int voteAuthorId, string voteCreationDate, bool voteValue)
         {
             // Arrange
@@ -134,7 +134,7 @@ namespace Explorer.Blog.Tests.Integration
         }
 
         [Theory]
-        [InlineData("Title1", 123, "2024-11-06T00:00:00", false)]
+        [InlineData("Title1", 3, "2024-11-06T00:00:00", false)]
         public void UpdateSingleVoteToExistingBlog_ThroughController(string blogTitle, int voteAuthorId, string voteCreationDate, bool voteValue)
         {
             // Arrange
